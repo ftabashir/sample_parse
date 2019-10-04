@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:sample_parse/backend/init-parse.dart';
+import 'package:sample_parse/widget/skills.dart';
 
 class RootWidget extends StatefulWidget {
   @override
@@ -40,7 +41,7 @@ class RootState extends State<RootWidget> {
             future: parseFuture,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                return Text("Connected to ParseServer");
+                return Skills();
               } else if (snapshot.hasError) {
                 return Column(
                     mainAxisAlignment: MainAxisAlignment.center,
